@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jointjam/fixed.dart';
 
+import '../bluetooth/connection_row.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
   final int imageIndex;
@@ -25,7 +27,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            buildBar(),
+            const ConnectionRow(),
             Text(
               "No Device is Connected",
               style: TextStyle(color: black.withOpacity(0.8)),
@@ -38,32 +40,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Row buildBar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        GestureDetector(
-            onTap: () {},
-            child: const Icon(
-              Icons.person_2_outlined,
-              color: black,
-              size: 30,
-            )),
-        const Text(
-          "Home",
-          style: TextStyle(fontSize: 16),
-        ),
-        GestureDetector(
-            onTap: () {},
-            child: const Icon(
-              Icons.add,
-              color: black,
-              size: 30,
-            )),
-      ],
     );
   }
 
